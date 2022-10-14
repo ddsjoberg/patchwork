@@ -60,7 +60,6 @@
 #'
 NULL
 
-#' @importFrom grid is.grob
 #' @rdname plot_arithmetic
 #' @export
 "-.ggplot" <- function(e1, e2) {
@@ -76,7 +75,7 @@ NULL
   }
   add_patches(plot, patchwork)
 }
-#' @importFrom grid is.grob
+
 #' @rdname plot_arithmetic
 #' @export
 "/.ggplot" <- function(e1, e2) {
@@ -89,7 +88,7 @@ NULL
     e1 - e2 + plot_layout(ncol = 1)
   }
 }
-#' @importFrom grid is.grob
+
 #' @rdname plot_arithmetic
 #' @export
 "|.ggplot" <- function(e1, e2) {
