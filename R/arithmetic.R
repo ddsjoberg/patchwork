@@ -63,6 +63,7 @@ NULL
 #' @rdname plot_arithmetic
 #' @export
 "-.ggplot" <- function(e1, e2) {
+  e1 <- arithmetic_prep(e1)
   e2 <- arithmetic_prep(e2)
   if (!is.ggplot(e2)) stop("Only knows how to fold ggplot objects together", call. = FALSE)
   patchwork <- new_patchwork()
@@ -79,6 +80,7 @@ NULL
 #' @rdname plot_arithmetic
 #' @export
 "/.ggplot" <- function(e1, e2) {
+  e1 <- arithmetic_prep(e1)
   e2 <- arithmetic_prep(e2)
   if (!is_patchwork(e1)) {
     e1 + e2 + plot_layout(ncol = 1)
@@ -92,6 +94,7 @@ NULL
 #' @rdname plot_arithmetic
 #' @export
 "|.ggplot" <- function(e1, e2) {
+  e1 <- arithmetic_prep(e1)
   e2 <- arithmetic_prep(e2)
   if (!is_patchwork(e1)) {
     e1 + e2 + plot_layout(nrow = 1)
